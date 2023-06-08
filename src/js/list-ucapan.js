@@ -11,7 +11,9 @@ const showToastMessage = async () => {
 
             // Response
             let responseJson = JSON.parse(this.response);
-            responseJson.forEach(item => {
+            const responseRandomJson = responseJson.sort(() => Math.random() - 0.5);
+
+            responseRandomJson.forEach(item => {
                 htmlToast += `<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="toast-header">
                     <svg class="bd-placeholder-img rounded me-2" width="20" height="20"
