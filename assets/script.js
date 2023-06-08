@@ -1,18 +1,31 @@
 import audioBirthday from './song.mp3'
 
 var audio = document.createElement("audio");
+document.querySelector('.music').appendChild(audio);
+
 //
 audio.autoplay = true;
 audio.loop = true;
 audio.preload = true;
-//
-audio.load()
-audio.addEventListener("load", function () {
-    audio.play();
-}, true);
+audio.id = 'myaudio';
 audio.src = audioBirthday;
 
-document.querySelector('.music').appendChild(audio);
+
+document.addEventListener('click', function (event) {
+    let promise = audio.play();
+
+    if (promise !== undefined) {
+        promise.then(_ => {
+            console.log('OK')
+            // Autoplay started!
+        }).catch(error => {
+            console.log('Fail')
+            // Autoplay was prevented.
+            // Show a "Play" button so that user can start playback.
+        });
+    }
+});
+
 
 
 
