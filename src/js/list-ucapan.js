@@ -1,4 +1,5 @@
 import * as bootstrap from 'bootstrap'
+import moment from 'moment';
 
 const showToastMessage = async () => {
     let htmlToast = "";
@@ -19,7 +20,7 @@ const showToastMessage = async () => {
                         <rect width="100%" height="100%" fill="#007aff"></rect>
                     </svg>
                     <strong class="me-auto">${item.name}</strong>
-                    <small class="text-muted">just now</small>
+                    <small class="text-muted">${moment(item.createdAt).fromNow()}</small>
                     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
                 <div class="toast-body">
