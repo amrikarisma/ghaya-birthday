@@ -38,9 +38,9 @@ const showToastMessage = async () => {
                     if (toastElList.length == i + 1) {
                         setTimeout(() => {
                             showToastMessage();
-                        }, 8000);
+                        }, 14000);
                     }
-                }, i * 8000);
+                }, i * 10000);
 
 
             })
