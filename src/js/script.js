@@ -106,23 +106,24 @@ function removeBalloons() {
 
 window.addEventListener("load", () => {
     createBalloons(30)
+    Swal.fire({
+        title: 'Selamat Datang di Web Ghaya Birthday!',
+        confirmButtonText: 'Lanjutkan',
+        width: 600,
+        padding: '3em',
+        color: '#716add',
+        background: '#fff url("https://sweetalert2.github.io/images/trees.png)',
+        backdrop: `
+    rgba(0,0,123,0.4)
+    url("https://sweetalert2.github.io/images/nyan-cat.gif")
+    left top
+    no-repeat
+  `
+    })
 });
 
 // window.addEventListener("click", () => {
 //     removeBalloons();
 // });
 
-Swal.fire({
-    title: 'Selamat Datang di Web Ghaya Birthday!',
-    confirmButtonText: 'Lanjutkan',
-    width: 600,
-    padding: '3em',
-    color: '#716add',
-    background: '#fff url("https://sweetalert2.github.io/images/trees.png)',
-    backdrop: `
-    rgba(0,0,123,0.4)
-    url("https://sweetalert2.github.io/images/nyan-cat.gif")
-    left top
-    no-repeat
-  `
-})
+
