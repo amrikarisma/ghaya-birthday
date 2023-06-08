@@ -239,8 +239,18 @@ a {
     z-index: 99;
 }
 
+.ghaya-photo {
+    max-width: 80%;
+}
+
 .form-ucapan {
+    max-width: 80%;
+    width: 500px;
     z-index: 2;
+
+    textarea.form-control {
+        min-height: 100px;
+    }
 }
 
 #balloon-container {

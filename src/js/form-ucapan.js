@@ -10,7 +10,7 @@ formUcapan.onsubmit = function (event) {
     }
 
     let post = JSON.stringify(formData)
-    const url = "http://127.0.0.1:3000/message/send"
+    const url = "https://api-ghaya-birthday.vercel.app/message/send"
     let xhr = new XMLHttpRequest()
     xhr.open('POST', url, true)
     xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8')
