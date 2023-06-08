@@ -75,8 +75,8 @@ function removeBalloons() {
 window.addEventListener("load", () => {
     createBalloons(30)
     Swal.fire({
-        title: 'Selamat Datang di Web Ghaya Birthday!',
-        confirmButtonText: 'Lanjutkan',
+        title: 'Welcome to Ghaya\'s Birthday Party Invitation!',
+        confirmButtonText: 'Enter',
         width: 600,
         padding: '3em',
         color: '#674ea7',
