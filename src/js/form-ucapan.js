@@ -20,7 +20,7 @@ formUcapan.onsubmit = function (event) {
             formUcapan.reset()
             console.log("Post successfully created!")
             Swal.fire({
-                title: 'Terima kasih ucapan & kadonya. Ghaya Senang...',
+                title: 'Thanks for the greetings and the gift. Ghaya is happy...🥰',
                 width: 600,
                 padding: '3em',
                 color: '#674ea7',
