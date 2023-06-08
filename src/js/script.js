@@ -4,31 +4,31 @@ import Swal from 'sweetalert2'
 import audioBirthday from '../assets/song.mp3'
 import './form-ucapan';
 
-// var audio = document.createElement("audio");
-// document.querySelector('.music').appendChild(audio);
+var audio = document.createElement("audio");
+document.querySelector('.music').appendChild(audio);
 
-// //
-// audio.autoplay = true;
-// audio.loop = true;
-// audio.preload = true;
-// audio.id = 'myaudio';
-// audio.src = audioBirthday;
+//
+audio.autoplay = true;
+audio.loop = true;
+audio.preload = true;
+audio.id = 'myaudio';
+audio.src = audioBirthday;
 
 
-// document.addEventListener('click', function (event) {
-//     let promise = audio.play();
+document.addEventListener('click', function (event) {
+    let promise = audio.play();
 
-//     if (promise !== undefined) {
-//         promise.then(_ => {
-//             console.log('OK')
-//             // Autoplay started!
-//         }).catch(error => {
-//             console.log('Fail')
-//             // Autoplay was prevented.
-//             // Show a "Play" button so that user can start playback.
-//         });
-//     }
-// });
+    if (promise !== undefined) {
+        promise.then(_ => {
+            console.log('OK')
+            // Autoplay started!
+        }).catch(error => {
+            console.log('Fail')
+            // Autoplay was prevented.
+            // Show a "Play" button so that user can start playback.
+        });
+    }
+});
 
 
 
