@@ -1,8 +1,8 @@
 import '../scss/styles.scss'
-import * as bootstrap from 'bootstrap'
 import Swal from 'sweetalert2'
 import audioBirthday from '../assets/song.mp3'
 import './form-ucapan';
+import showToastMessage from './list-ucapan';
 
 var audio = document.createElement("audio");
 document.querySelector('.music').appendChild(audio);
@@ -87,13 +87,13 @@ window.addEventListener("load", () => {
     left top
     no-repeat
   `
+    }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            showToastMessage()
+        }
     })
 });
-
-// window.addEventListener("click", () => {
-//     removeBalloons();
-// });
-
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('body').style.visibility = 'visible';

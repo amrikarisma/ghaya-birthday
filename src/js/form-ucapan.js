@@ -17,6 +17,7 @@ formUcapan.onsubmit = function (event) {
     xhr.send(post);
     xhr.onload = function () {
         if (xhr.status === 200) {
+            formUcapan.reset()
             console.log("Post successfully created!")
             Swal.fire({
                 title: 'Terima kasih ucapan & kadonya. Ghaya Senang...',
