@@ -9,7 +9,6 @@ function getMessage() {
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let responseJson = JSON.parse(this.response);
-            console.log(responseJson)
             let html = "";
             responseJson.forEach(item => {
                 html += `<div class="item-chat">

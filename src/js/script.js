@@ -74,7 +74,7 @@ function removeBalloons() {
 }
 
 window.addEventListener("load", () => {
-    createBalloons(30)
+    createBalloons(15)
     Swal.fire({
         title: 'Welcome to Ghaya\'s Birthday Party Invitation!',
         confirmButtonText: 'Enter',
