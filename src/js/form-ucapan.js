@@ -2,7 +2,22 @@ import Swal from 'sweetalert2'
 
 const chatbox = document.getElementById("chatbox");
 getMessage();
+
+setInterval(() => {
+    if (chatbox.scrollTop === chatbox.scrollHeight) {
+        getMessage();
+    }
+}, 15000);
+
+chatbox.onscroll = (event) => {
+    console.log(chatbox.scrollTop, chatbox.scrollHeight)
+    if ((chatbox.scrollTop + 200) == chatbox.scrollHeight) {
+        getMessage();
+    }
+}
+
 function getMessage() {
+
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "https://api-ghaya-birthday.vercel.app/message", true);
     xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8')
