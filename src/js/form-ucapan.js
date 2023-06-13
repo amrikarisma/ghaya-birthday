@@ -1,6 +1,32 @@
 import Swal from 'sweetalert2'
 
-let formUcapan = document.getElementById("form_ucapan");
+const chatbox = document.getElementById("chatbox");
+getMessage();
+function getMessage() {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api-ghaya-birthday.vercel.app/message", true);
+    xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8')
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let responseJson = JSON.parse(this.response);
+            console.log(responseJson)
+            let html = "";
+            responseJson.forEach(item => {
+                html += `<div class="item-chat">
+                            <div class="author"><span class="badge bg-primary">${item.name}</span></div>
+                            <p>${item.message}</p>
+                        </div>`;
+            });
+            chatbox.innerHTML = html;
+            chatbox.scrollTop = chatbox.scrollHeight;
+
+        }
+    };
+    xhr.send();
+}
+
+
+const formUcapan = document.getElementById("form_ucapan");
 formUcapan.onsubmit = function (event) {
     event.preventDefault();
     let formData = {
@@ -18,7 +44,7 @@ formUcapan.onsubmit = function (event) {
     xhr.onload = function () {
         if (xhr.status === 200) {
             formUcapan.reset()
-            console.log("Post successfully created!")
+            getMessage()
             Swal.fire({
                 title: 'Thanks for the greetings and the gift. Ghaya is happy...🥰',
                 width: 600,

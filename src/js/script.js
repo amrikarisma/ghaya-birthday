@@ -11,6 +11,7 @@ document.querySelector('.music').appendChild(audio);
 audio.autoplay = true;
 audio.loop = true;
 audio.preload = true;
+audio.volume = 0.2;
 audio.id = 'myaudio';
 audio.src = audioBirthday;
 

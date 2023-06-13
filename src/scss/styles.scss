@@ -146,7 +146,7 @@ main {}
 }
 
 .container-custom {
-    max-width: 800px;
+    max-width: 900px;
 }
 
 .block {
@@ -246,6 +246,21 @@ a {
     display: flex;
 }
 
+#chatbox {
+    max-height: 200px;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+    z-index: 1;
+    position: relative;
+}
+
+#chatbox>div {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+
+
 .form-ucapan {
     max-width: 100%;
     width: 500px;
@@ -342,4 +357,8 @@ a {
     --bs-btn-disabled-color: #fff;
     --bs-btn-disabled-bg: #674ea7;
     --bs-btn-disabled-border-color: #674ea7;
+}
+
+.bg-primary {
+    background-color: #674ea7 !important;
 }
