@@ -39,8 +39,12 @@ img {
 .bottom-left-decoration {
     position: absolute;
     left: 10px;
-    bottom: 0;
+    bottom: 40px;
     z-index: 1;
+
+    @media (min-width:768px) {
+        bottom: 0;
+    }
 }
 
 .title h1 {
@@ -248,7 +252,7 @@ a {
 
 #chatbox {
     max-height: 200px;
-    overflow-y: scroll;
+    overflow: hidden scroll;
     margin-bottom: 20px;
     z-index: 1;
     position: relative;
