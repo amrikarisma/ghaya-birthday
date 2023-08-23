@@ -122,7 +122,18 @@ img {
     font-family: 'Arvo', serif;
 }
 
-main {}
+#countdown {
+    font-family: "Dancing Script", cursive;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 18px;
+    margin: 10px 0 32px 0;
+    color: #674ea7;
+
+    @media (min-width: 768px) {
+        font-size: 33px;
+    }
+}
 
 #time {
     width: auto;
