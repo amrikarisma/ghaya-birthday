@@ -93,7 +93,7 @@ window.addEventListener("load", () => {
         title: welcomeMessage,
         confirmButtonText: 'Open invitation',
         width: 600,
-        padding: '3em',
+        padding: '3em 0',
         color: '#674ea7',
         background: '#fff url("https://sweetalert2.github.io/images/trees.png")',
         backdrop: `
