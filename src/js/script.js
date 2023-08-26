@@ -5,6 +5,7 @@ import './form-ucapan';
 import showToastMessage from './list-ucapan';
 
 let name;
+let welcomeMessage;
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -79,11 +80,16 @@ function removeBalloons() {
 
 window.addEventListener("load", () => {
     name = localStorage.getItem("name");
-    document.querySelector('#name').value = name;
+    if (name) {
+        document.querySelector('#name').value = name;
+        welcomeMessage = `Hi ${name}, welcome to Ghaya\'s Birthday Party Invitation!`;
+    } else {
+        welcomeMessage = `Welcome to Ghaya\'s Birthday Party Invitation!`;
+    }
 
     createBalloons(15)
     Swal.fire({
-        title: `Hi ${name}, welcome to Ghaya\'s Birthday Party Invitation!`,
+        title: welcomeMessage,
         confirmButtonText: 'Enter',
         width: 600,
         padding: '3em',
