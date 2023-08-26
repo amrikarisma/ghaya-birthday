@@ -8,6 +8,7 @@ let name;
 let welcomeMessage;
 
 const queryString = window.location.search;
+
 const urlParams = new URLSearchParams(queryString);
 const invitaitonTo = urlParams.get('to')
 if (invitaitonTo) {
