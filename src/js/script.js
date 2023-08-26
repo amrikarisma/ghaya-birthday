@@ -4,6 +4,15 @@ import audioBirthday from '../assets/song.mp3'
 import './form-ucapan';
 import showToastMessage from './list-ucapan';
 
+let name;
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const invitaitonTo = urlParams.get('to')
+if (invitaitonTo) {
+    localStorage.setItem('name', invitaitonTo);
+}
+
 var audio = document.createElement("audio");
 document.querySelector('.music').appendChild(audio);
 
@@ -21,10 +30,8 @@ document.addEventListener('click', function (event) {
 
     if (promise !== undefined) {
         promise.then(_ => {
-            console.log('OK')
             // Autoplay started!
         }).catch(error => {
-            console.log('Fail')
             // Autoplay was prevented.
             // Show a "Play" button so that user can start playback.
         });
@@ -71,9 +78,12 @@ function removeBalloons() {
 }
 
 window.addEventListener("load", () => {
+    name = localStorage.getItem("name");
+    document.querySelector('#name').value = name;
+
     createBalloons(15)
     Swal.fire({
-        title: 'Welcome to Ghaya\'s Birthday Party Invitation!',
+        title: `Hi ${name}, welcome to Ghaya\'s Birthday Party Invitation!`,
         confirmButtonText: 'Enter',
         width: 600,
         padding: '3em',
@@ -88,14 +98,14 @@ window.addEventListener("load", () => {
     }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
-            showToastMessage()
+            // showToastMessage()
         }
     })
 });
 
 function countdownTimer() {
     // Set the date we're counting down to
-    var countDownDate = new Date("2023/09/03 09:00:00").getTime();
+    var countDownDate = new Date("2023/09/03 15:30:00").getTime();
 
     // Update the count down every 1 second
     var x = setInterval(function () {
@@ -111,10 +121,11 @@ function countdownTimer() {
 
         if (distance < 0) {
             clearInterval(x);
-            document.getElementById("countdown").innerHTML = "EXPIRED";
+            document.getElementById("countdown").innerHTML = "";
         }
     }, 1000);
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
     countdownTimer();

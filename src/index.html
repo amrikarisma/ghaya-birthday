@@ -44,7 +44,8 @@
             <div class="title">
                 <h1>Ghaya</h1>
                 <h3>Will celebrate birthday</h3>
-                <p>on <span class="date">03 September 2023</span>, in <span class="place">Blubuk</span>,
+                <p>on <span class="date">03 September 2023 - 15:30 WIB</span>, <br />in <span
+                        class="place">Blubuk</span>,
                     Dukuhwaru
                 </p>
                 <div id="countdown">0 days 0 hours 0 minutes 0 secounds</div>
@@ -73,7 +74,23 @@
                     </div>
                     <p class="footer">
                     <h6 class="dance-med">Say hello to Ghaya and give a gift</h6>
-                    <div id="chatbox">
+                    <div class="chatbox-wrapper">
+                        <div class="chatbox-info">
+                            <div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-chat-left-dots-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm5 4a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                </svg> <span id="total_msg">0</span> messages</div>
+                            <div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-person-fill-check" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514ZM11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                    <path
+                                        d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z" />
+                                </svg> <span id="total_presents">0</span> presents</div>
+                        </div>
+                        <div id="chatbox">
+                        </div>
                     </div>
                     <form action="" method="post" id="form_ucapan" class="form-ucapan">
                         <div class="form-floating mb-3">
@@ -86,6 +103,14 @@
                                 maxlength="200" placeholder="Kasih ucapan untuk Ghaya..." required></textarea>
                             <label for="message">Message for Ghaya</label>
 
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select name="presence" id="presence" class="form-select form-select-sm">
+                                <option value="">-</option>
+                                <option value="present">Present (Hadir)</option>
+                                <option value="absent">Absent (Tidak hadir)</option>
+                            </select>
+                            <label for="name">Presence</label>
                         </div>
                         <div class="wrap-button-submit">
                             <button type="submit" class="btn btn-primary rounded-pill">Send</button>

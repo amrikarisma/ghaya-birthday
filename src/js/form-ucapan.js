@@ -1,5 +1,6 @@
 import Swal from 'sweetalert2'
 
+const chatboxInfo = document.querySelector(".chatbox-info");
 const chatbox = document.getElementById("chatbox");
 getMessage();
 
@@ -17,23 +18,27 @@ chatbox.onscroll = (event) => {
 }
 
 function getMessage() {
-
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "https://api-ghaya-birthday.vercel.app/message", true);
     xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8')
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let responseJson = JSON.parse(this.response);
+            let totalMsg = responseJson.length;
+            let totalPresent = responseJson.filter(m => m.presence == 'present').length;
             let html = "";
             responseJson.forEach(item => {
                 html += `<div class="item-chat">
-                            <div class="author"><span class="badge bg-primary">${item.name}</span></div>
+                            <div class="author"><span class="badge bg-primary">${item.name}</span> 
+                            ${item.presence ? '<span class="badge bg-outline-primary">' + (item.presence == 'present' ? 'Hadir' : 'Tidak hadir') + '</span>' : ''}</div>
                             <p>${item.message}</p>
                         </div>`;
             });
             chatbox.innerHTML = html;
             chatbox.scrollTop = chatbox.scrollHeight;
 
+            chatboxInfo.querySelector('#total_msg').textContent = totalMsg;
+            chatboxInfo.querySelector('#total_presents').textContent = totalPresent;
         }
     };
     xhr.send();
@@ -46,6 +51,7 @@ formUcapan.onsubmit = function (event) {
     let formData = {
         name: formUcapan.querySelector('[name=name]').value,
         message: formUcapan.querySelector('[name=message]').value,
+        presence: formUcapan.querySelector('[name=presence]').value,
         gift: 0
     }
 
