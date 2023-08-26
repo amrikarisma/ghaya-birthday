@@ -83,21 +83,21 @@ window.addEventListener("load", () => {
     name = localStorage.getItem("name");
     if (name) {
         document.querySelector('#name').value = name;
-        welcomeMessage = `Hi ${name}, welcome to Ghaya\'s Birthday Party Invitation!`;
+        welcomeMessage = `Hi ${name}, you are invited to Ghaya's birthday party`;
     } else {
-        welcomeMessage = `Welcome to Ghaya\'s Birthday Party Invitation!`;
+        welcomeMessage = `We invite you to Ghaya's birthday party`;
     }
 
     createBalloons(15)
     Swal.fire({
         title: welcomeMessage,
-        confirmButtonText: 'Enter',
+        confirmButtonText: 'Open invitation',
         width: 600,
         padding: '3em',
         color: '#674ea7',
         background: '#fff url("https://sweetalert2.github.io/images/trees.png")',
         backdrop: `
-    rgba(0,0,123,0.4)
+    #f27474f7
     url("https://sweetalert2.github.io/images/nyan-cat.gif")
     left top
     no-repeat
